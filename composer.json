@@ -1,6 +1,6 @@
 {
     "name": "ermeo/rate-limiter",
-    "description": "This package aims to rate limite request for an api",
+    "description": "This package aims to rate limit request for an api",
     "type": "symfony-bundle",
     "require": {
         "php": "7.2"
