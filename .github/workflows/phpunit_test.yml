@@ -42,7 +42,7 @@ jobs:
         run: cp .php_cs.dist .php_cs
 
       - name: Run friendsofphp/php-cs-fixer
-        run: vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose --rules=@Symfony
+        run: vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose
 
       - name: Run test suite
         run: vendor/bin/phpunit --log-junit results/phpunit/phpunit.xml --coverage-clover 'results/phpunit/coverage.xml'

@@ -41,6 +41,7 @@ return PhpCsFixer\Config::create()
         'native_function_type_declaration_casing' => true,
         'new_with_braces' => true,
         'no_blank_lines_after_class_opening' => true,
+        'no_superfluous_phpdoc_tags' => false,
         'doctrine_annotation_array_assignment' => true,
         'doctrine_annotation_braces' => true,
         'doctrine_annotation_indentation' => true,
