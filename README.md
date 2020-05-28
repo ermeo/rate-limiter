@@ -12,5 +12,5 @@ composer require ermeo/rate-limiter
 
 ### Php cs fixer
 ```bash
-./vendor/bin/php-cs-fixer fix --config=.php_cs --diff --diff-format=udiff --dry-run --verbose --rules=@Symfony
+./vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose
 ```
