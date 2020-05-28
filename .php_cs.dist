@@ -1,0 +1,54 @@
+<?php
+/*
+ * This document has been generated with
+ * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16.3|configurator
+ * you can change this configuration by importing this file.
+ */
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR1' => true,
+        '@Symfony' => true,
+        '@PSR2' => true,
+        '@DoctrineAnnotation' => true,
+        'encoding' => true,
+        'full_opening_tag' => true,
+        'array_syntax' => true,
+        'binary_operator_spaces' => true,
+        'blank_line_after_namespace' => true,
+        'blank_line_after_opening_tag' => true,
+        'blank_line_before_statement' => true,
+        'braces' => true,
+        'cast_spaces' => true,
+        'class_attributes_separation' => true,
+        'class_definition' => true,
+        'concat_space' => true,
+        'constant_case' => true,
+        'declare_equal_normalize' => true,
+        'elseif' => true,
+        'function_declaration' => true,
+        'function_typehint_space' => true,
+        'include' => true,
+        'increment_style' => true,
+        'indentation_type' => true,
+        'line_ending' => true,
+        'lowercase_cast' => true,
+        'lowercase_keywords' => true,
+        'lowercase_static_reference' => true,
+        'magic_constant_casing' => true,
+        'magic_method_casing' => true,
+        'method_argument_space' => true,
+        'native_function_casing' => true,
+        'native_function_type_declaration_casing' => true,
+        'new_with_braces' => true,
+        'no_blank_lines_after_class_opening' => true,
+        'doctrine_annotation_array_assignment' => true,
+        'doctrine_annotation_braces' => true,
+        'doctrine_annotation_indentation' => true,
+        'doctrine_annotation_spaces' => true,
+    ])
+    ->setFinder(
+        PhpCsFixer\Finder::create()
+            ->exclude('vendor')
+            ->in(__DIR__)
+    )
+    ;
