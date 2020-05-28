@@ -18,7 +18,7 @@ class ConfigurationTest extends TestCase
         $this->processor = new Processor();
     }
 
-    private function getConfigs(array $configArray)
+    private function getConfigs(array $configArray): array
     {
         $configuration = new Configuration();
 
