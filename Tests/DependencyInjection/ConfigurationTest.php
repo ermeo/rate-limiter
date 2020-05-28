@@ -13,7 +13,7 @@ class ConfigurationTest extends TestCase
      */
     private $processor;
 
-    public function setUp():void
+    public function setUp(): void
     {
         $this->processor = new Processor();
     }
