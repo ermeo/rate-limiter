@@ -1,4 +1,5 @@
 <?php
+
 namespace Ermeo\RateLimitBundle\Tests;
 
 use Ermeo\RateLimitBundle\ErmeoRateLimitBundle;

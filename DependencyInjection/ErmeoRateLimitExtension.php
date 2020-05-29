@@ -7,9 +7,8 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 
 class ErmeoRateLimitExtension extends Extension
 {
-
     /**
-     * @param array $configs
+     * @param array            $configs
      * @param ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
