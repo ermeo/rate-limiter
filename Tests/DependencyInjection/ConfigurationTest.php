@@ -1,6 +1,6 @@
 <?php
 
-namespace DependencyInjection;
+namespace Ermeo\RateLimitBundle\Tests\DependencyInjection;
 
 use Ermeo\RateLimitBundle\DependencyInjection\Configuration;
 use PHPUnit\Framework\TestCase;
