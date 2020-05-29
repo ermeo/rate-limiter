@@ -20,6 +20,12 @@
         "phpunit/phpunit": "^8.5",
         "friendsofphp/php-cs-fixer": "^2.16"
     },
+    "scripts": {
+        "test": [
+            "phpunit --log-junit results/phpunit/phpunit.xml --coverage-clover 'results/phpunit/coverage.xml'",
+            "php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "Ermeo\\RateLimitBundle\\": ""
