@@ -1,0 +1,44 @@
+ermeo_rate_limit:
+  enabled: true
+  cache: ~
+  providers:
+    user:
+      service: '@user.provider'
+      rateLimitInfo: '@ermeo.rate.limit.info'
+      allowed:
+        strategy: 'Ermeo\RateLimitBundle\Service\AllowBlockList\AllowIpList'
+        separator: ';' # ; is the default separator
+        values: 'ip;ip;ip' #ip, OauthToken supported separated by comma
+      blocked:
+        strategy: IsListedInterface
+        separator: ';' # ; is the default separator
+        values: 'ip;ip;ip' #ip, OauthToken supported separated by comma
+      headers:
+        display: true
+        names:
+          limit: X-RateLimit-Limit
+          remaining: X-Rate-Remaining
+          reset: X-RateLimit-Reset
+      exception:
+        code: 429
+        message: ''
+    client:
+      service: App::class
+      rateLimitInfo: RateLimitInfoInterface
+      allowed:
+        strategy: IsListedInterface
+        separator: ';' # ; is the default separator
+        values: 'ip;ip;ip' #ip, OauthToken supported separated by comma
+      blocked:
+        strategy: IsListedInterface
+        separator: ';' # ; is the default separator
+        values: 'ip;ip;ip' #ip, OauthToken supported separated by comma
+      headers:
+        display: true
+        names:
+          limit: X-RateLimit-Limit
+          remaining: X-Rate-Remaining
+          reset: X-RateLimit-Reset
+      exception:
+        code: 429
+        message: ''

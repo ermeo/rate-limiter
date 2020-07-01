@@ -11,14 +11,20 @@
         }
     ],
     "require": {
+        "doctrine/annotations": "1.10.3",
         "php": "^7.2",
+        "sensio/framework-extra-bundle": "^3.0",
         "symfony/framework-bundle": "^3.4",
-        "sensio/framework-extra-bundle": "^3.0"
+        "symfony/security-bundle": "^3.4",
+        "symfony/yaml": "^3.4"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master",
+        "doctrine/orm": "^2.6",
+        "ext-redis": "*",
+        "friendsofphp/php-cs-fixer": "^2.16",
         "phpunit/phpunit": "^8.5",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "predis/predis": "^0.8|^1.1",
+        "roave/security-advisories": "dev-master"
     },
     "scripts": {
         "test": [
@@ -28,7 +34,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Ermeo\\RateLimitBundle\\": ""
+            "Ermeo\\RateLimitBundle\\": "",
+            "Ermeo\\RateLimitBundle\\Tests\\": "Tests"
         }
     }
 }

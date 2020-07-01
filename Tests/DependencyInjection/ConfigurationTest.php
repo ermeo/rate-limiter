@@ -22,13 +22,13 @@ class ConfigurationTest extends TestCase
     {
         $configuration = new Configuration();
 
-        return $this->processor->processConfiguration($configuration, array($configArray));
+        return $this->processor->processConfiguration($configuration, [$configArray]);
     }
 
     public function testGetConfigTreeBuilder(): void
     {
-        $configuration = $this->getConfigs(array());
+        $configuration = $this->getConfigs([]);
 
-        $this->assertSame(array(), $configuration);
+        $this->assertSame(['enabled' => true, 'rules' => [], 'providers' => []], $configuration);
     }
 }
