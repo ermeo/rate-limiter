@@ -1,0 +1,11 @@
+services:
+  ermeo_rate_limit.configuration.headers:
+    class: Ermeo\RateLimitBundle\Entity\Headers
+    shared: false
+
+  ermeo_rate_limit.configuration.general:
+    class: Ermeo\RateLimitBundle\Configuration\GeneralConfiguration
+    arguments:
+      - false
+      - []
+    shared: true

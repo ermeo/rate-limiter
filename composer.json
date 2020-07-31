@@ -1,0 +1,41 @@
+{
+    "name": "ermeo/rate-limiter",
+    "description": "This package aims to rate limit request for an api",
+    "type": "symfony-bundle",
+    "keywords": ["rate-limit", "symfony"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stéphane Mullings",
+            "email": "stephane.mullings@ermeo.com"
+        }
+    ],
+    "require": {
+        "doctrine/annotations": "1.10.3",
+        "php": "^7.2",
+        "sensio/framework-extra-bundle": "^3.0",
+        "symfony/framework-bundle": "^3.4",
+        "symfony/security-bundle": "^3.4",
+        "symfony/yaml": "^3.4"
+    },
+    "require-dev": {
+        "doctrine/orm": "^2.6",
+        "ext-redis": "*",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^8.5",
+        "predis/predis": "^0.8|^1.1",
+        "roave/security-advisories": "dev-master"
+    },
+    "scripts": {
+        "test": [
+            "phpunit --log-junit results/phpunit/phpunit.xml --coverage-clover 'results/phpunit/coverage.xml'",
+            "php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Ermeo\\RateLimitBundle\\": "",
+            "Ermeo\\RateLimitBundle\\Tests\\": "Tests"
+        }
+    }
+}

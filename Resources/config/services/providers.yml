@@ -1,0 +1,3 @@
+services:
+  ermeo_rate_limit.providers.list:
+    class: Ermeo\RateLimitBundle\Service\RateLimitListProvider
