@@ -1,0 +1,10 @@
+imports:
+  - { resource: services/event_listener.yml }
+  - { resource: services/configuration.yml }
+  - { resource: services/providers.yml }
+
+services:
+  ermeo_rate_limit.storage:
+    class: "%noxlogic_rate_limit.storage.class%"
+    arguments:
+      - '@snc_redis.default_client'

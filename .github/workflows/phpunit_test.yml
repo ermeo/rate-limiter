@@ -1,0 +1,48 @@
+name: PHPUnit Test
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Remove HHVM
+        run: sudo apt -y remove hhvm
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v1
+        with:
+          php-version: '7.2.24'
+          extensions: pdo, pdo_sqlite, gd, xml, mbstring, bcmath, zip, curl, mysql, fpm, intl, imagick
+          coverage: xdebug #optional, setup coverage driver
+          tools: phpunit #optional, setup tools globally
+
+
+      - name: Init composer lock
+        run: cp composer.lock.dist composer.lock
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
+      - name: Init php-cs-fixer lock
+        run: cp .php_cs.dist .php_cs
+
+      - name: Run friendsofphp/php-cs-fixer
+        run: vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose
+
+      - name: Run test suite
+        run: vendor/bin/phpunit --log-junit results/phpunit/phpunit.xml --coverage-clover 'results/phpunit/coverage.xml'

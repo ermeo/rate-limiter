@@ -1,0 +1,11 @@
+services:
+  ermeo_rate_limit.event_listener.rate_limit:
+    class: Ermeo\RateLimitBundle\EventListener\RateLimitListener
+    arguments:
+      - 'ermeo_rate_limit.providers.list'
+      - 'ermeo_rate_limit.configuration.general'
+
+  ermeo_rate_limit.event_listener.header_modification:
+    class: Ermeo\RateLimitBundle\EventListener\HeaderModificationListener
+    arguments:
+      - 'ermeo_rate_limit.providers.list'
